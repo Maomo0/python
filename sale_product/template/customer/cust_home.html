@@ -1,0 +1,30 @@
+{% extends './base.html' %}
+{% block title %}
+商品详细信息
+{% endblock %}
+{% block content %}
+<blockquote class="blockquote text-center">
+    <div class="card mb-3" style="max-width: 600px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{ MEDIA_URL }}{{ prod_img }}" class="card-img" alt="" style="width: 350px;height: 400px">
+            </div>
+            <div class="col-md-8" style="text-align: right">
+                <div class="card-body">
+                    <h5 class="card-title">产品名称：{{ prod_name }}</h5>
+                    <p class="card-text" style="color: deepskyblue">操作员：{{ emp_name }}</p>
+                    <p style="color: deeppink">&nbsp;&nbsp;&nbsp;购买顾客：{{ customer_name }}</p>
+                    <p style="color: darkgreen">&nbsp;&nbsp;&nbsp;顾客地址：{{ customer_addr }}</p>
+                    <p style="color: darkviolet">&nbsp;&nbsp;&nbsp;订货日期：{{ order_date }}</p>
+                    <p style="color: chocolate">&nbsp;&nbsp;&nbsp;发货日期：{{ ship_date }}</p>
+                    <p style="color: brown">&nbsp;&nbsp;&nbsp;销售数量：{{ qty }}</p>
+                    <p style="color: crimson">&nbsp;&nbsp;&nbsp;单&nbsp;&nbsp;价：{{ price }}</p>
+                    <p style="color: greenyellow;">&nbsp;&nbsp;&nbsp;订单金额：{{ tot_amt }}</p>
+                    <p class="card-text"><small class="text-muted">{{ now_date }}</small></p>
+                </div>
+            </div>
+        </div>
+        {% csrf_token %}
+    </div>
+</blockquote>
+{% endblock %}

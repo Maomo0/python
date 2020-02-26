@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+{% block title %}
+商品信息
+{% endblock %}
+{% block content%}
+<div class="row">
+    {% for pro in prod %}
+    <div class="col">
+        <div class="card" style="width: 20rem;">
+            <img src="{{ MEDIA_URL }}{{pro.prod_img}}" class="img-thumbnail" style="display: inline-block" alt="">
+            <div class="card-body">
+                <h6 class="card-title">产&nbsp;品&nbsp;名&nbsp;称：{{ pro.prod_name }} </h6>
+                <p class="card-text">产&nbsp;品&nbsp;编&nbsp;号：{{ pro.prod_id }} </p>
+                <a href="{% url 'prod_msg' forloop.counter %}" class="btn btn-primary stretched-link" name="p"
+                   id="pro_msg">查看产品销售信息</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% csrf_token %}
+</div>
+{% endblock %}
