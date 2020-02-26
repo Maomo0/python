@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+{% block title %}
+查询顾客信息如下
+{% endblock %}
+{% block content %}
+<blockquote class="blockquote text-center">
+    <div class="row">
+        <div class="col">
+            <div class="card bg-light mb-3" style="width: 20rem;">
+                <div class="card-header">
+                    <p style="display: inline-block">顾&nbsp;客&nbsp;姓&nbsp;名:&nbsp;&nbsp;
+                        <strong>{{ customer_name }} </strong>
+                    </p>
+                </div>
+                <div class="card-body" style="color: coral">
+                    <p class="card-text">顾&nbsp;客&nbsp;id:&nbsp;&nbsp;
+                        <em>{{ customer_id }}</em>
+                    </p>
+                    <p class="card-text" style="color: cornflowerblue">顾&nbsp;客&nbsp;住&nbsp;址:&nbsp;&nbsp;
+                        <em>{{ addr }}</em>
+                    </p>
+                    <p class="card-text" style="color: crimson">顾&nbsp;客&nbsp;电&nbsp;话:&nbsp;&nbsp;
+                        <em>
+                            {{ tel_no }}
+                        </em>
+                    </p>
+                    <p class="card-text" style="color: darkmagenta">购&nbsp;买&nbsp;商&nbsp;品:&nbsp;&nbsp;
+                        <em>
+                            {{ prod_name }}
+                        </em>
+                    </p>
+                    <p class="card-text" style="color: darkgreen">邮&nbsp;政&nbsp;编&nbsp;码:&nbsp;&nbsp;
+                        <em>
+                            {{ zip_code }}
+                        </em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+     {% csrf_token %}
+</blockquote>
+{% endblock %}

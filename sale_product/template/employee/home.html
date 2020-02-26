@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工</title>
+</head>
+<body>
+<form name="h" method="post" action="{% url 'login' %}">
+    <label>
+        <input class="btn" type="text" name="username" placeholder="请输入用户名"><br>
+        <input class="btn" type="password" name="password" placeholder="请输入密码">
+    </label>
+    <input class="btn" type="submit" name="登录" value="登录" />
+    {%csrf_token%}
+</form>
+</body>
+
+</html>

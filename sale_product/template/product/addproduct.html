@@ -1,0 +1,69 @@
+{% extends './base.html' %}
+{% block title %}
+增加商品信息
+{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'add_prod' %}">
+    <div class="form-group">
+        <label for="customer_name">顾&nbsp;客&nbsp;姓&nbsp;名:</label>
+        <input type="text" class="form-control" id="customer_name" name="customer_name" aria-describedby="textHelp">
+        <small id="textHelp" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="customer_id">顾&nbsp;客&nbsp;id:</label>
+        <input type="text" class="form-control" id="customer_id" name="customer_id">
+        <small id="customer" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="customer_id">顾&nbsp;客&nbsp;住&nbsp;址:</label>
+        <input type="text" class="form-control" id="addr" name="addr">
+        <small id="custaddr" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="tel_no">顾&nbsp;客&nbsp;电&nbsp;话:</label>
+        <input type="text" class="form-control" id="tel_no" name="tel_no">
+        <small id="cust_tel" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="prod_id">商&nbsp;品&nbsp;id:</label>
+        <input type="text" class="form-control" id="prod_id" name="prod_id">
+        <small id="pro_id" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="prod_name">商&nbsp;品&nbsp;名&nbsp;称:</label>
+        <input type="text" class="form-control" id="prod_name" name="prod_name">
+        <small id="pro_name" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="order_no">订&nbsp;单&nbsp;编&nbsp;号:</label>
+        <input type="text" class="form-control" id="order_no" name="order_no">
+        <small id="order" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="unit_price">单&nbsp;价:</label>
+        <input type="text" class="form-control" id="unit_price" name="unit_price">
+        <small id="unit" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="qty">销&nbsp;售&nbsp;数&nbsp;量:</label>
+        <input type="text" class="form-control" id="qty" name="qty">
+        <small id="saleqty" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-group">
+        <label for="tot_mat">订&nbsp;单&nbsp;金&nbsp;额:</label>
+        <input type="text" class="form-control" id="tot_mat" name="tot_mat">
+        <small id="tot" class="form-text text-muted">必填项</small>
+    </div>
+    <div class="form-row">
+        <legend class="col-form-label col-sm-2 pt-0">操&nbsp;作&nbsp;人&nbsp;员&nbsp;工&nbsp;号:</legend>
+        <select class="custom-select custom-select-lg mb-3" name="emp_no">
+            {% for emp in emp_no %}
+            <option name="emp_no">{{emp}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">提交信息</button>
+    {% csrf_token %}
+</form>
+{% endblock %}

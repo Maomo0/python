@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+{% block title %}
+删除商品
+{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'delete_prod' %}">
+    <div class="form-row">
+        <legend class="col-form-label col-sm-2 pt-0">选&nbsp;择&nbsp;删&nbsp;除&nbsp;的&nbsp;商&nbsp;品:</legend>
+        <select class="custom-select custom-select-lg mb-3" name="prod_name">
+            {% for pr in pro %}
+            <option name="prod_name">{{pr.prod_name}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary">提交信息</button>
+    </div>
+    {% csrf_token %}
+</form>
+{% endblock %}

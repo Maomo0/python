@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>登录</title>
+<link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+</head>
+
+<body>
+
+<img class="bgone" src="/static/img/1.jpg" />
+<img class="pic" src="/static/img/a.png" />
+<script>alert(msg)</script>
+<form method='post' name="login" {% if user %} action="{% url 'prod_home' %}"{% else %}
+	  action="{% url 'login_in'%}" {% endif %}>
+	<div class="table">
+		<div class="wel">系统后台登录</div>
+		<div class="wel1">XI TONG HUO TAI DENG LU</div>
+		<div class="user">
+			<div id="yonghu"><img src="/static/img/yhm.png" /></div>
+			<input type="text" name="username" placeholder="用户名" />
+		</div>
+		<div class="password">
+			<div id="yonghu"><img src="/static/img/mm.png" /></div>
+			<input type="password" name="password" placeholder="请输入密码"/>
+		</div>
+		<input class="btn" type="submit" name="登录" value="登录" />
+	</div>
+{% csrf_token %}
+</form>
+</body>
+</html>
