@@ -27,3 +27,7 @@
 查看git全部命令：git --help
 
 查看git某个命令的使用：git help 命令名
+
+推失败:
+git pull --rebase origin master
+git push -u origin master
